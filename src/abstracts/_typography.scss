@@ -1,0 +1,73 @@
+//Headline
+@mixin headline($size, $weight, $color) {
+  color: $color;
+  font-weight: $weight;
+  @if $size == H1 {
+    font-size: 64px;
+    line-height: normal;
+  }
+  @else if $size == H2 {
+    font-size: 32px;
+    line-height: 150%;
+  }
+  @else if $size == H3 {
+    font-size: 24px;
+    line-height: 150%;
+  }
+  @else if $size == H4 {
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 3.5px;
+  }
+  @else {
+    @error "Tamanho de título inválido (H1, H2, H3, H4)";
+  }
+}
+
+//Subtitle
+@mixin subtitle($size, $weight, $color) {
+  color: $color;
+  font-weight: $weight;
+  @if $size == 22 {
+    font-size: 22px;
+    line-height: 130%;
+  }
+  @else if $size == 16 {
+    font-size: 16px;
+    @if $weight == 'bold' or $weight == '700' {
+      line-height: 130%;
+    }
+    @else {
+      line-height: 150%;
+    }
+  }
+  @else if $size == 14 {
+    font-size: 14px;
+    line-height: 150%;
+  }
+  @else {
+    @error "Tamanho de subtítulo inválido (22, 16, 14)";
+  }
+}
+
+//Paragraph
+@mixin paragraph($size, $weight, $color) {
+  color: $color;
+  font-weight: $weight;
+  @if $size == 14 {
+    font-size: 14px;
+    @if $weight == 'bold' or $weight == '700' {
+      line-height: 130%;
+    }
+    @else {
+      line-height: 119.5%;
+    }
+  }
+  @else if $size == 12 {
+    font-size: 12px;
+    line-height: 130%;
+  }
+  @else {
+    @error "Tamanho de parágrafo inválido (14, 12)";
+  }
+}

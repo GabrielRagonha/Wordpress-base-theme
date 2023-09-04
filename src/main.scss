@@ -1,0 +1,16 @@
+@use 'abstracts' as *;
+@use 'reset';
+@use 'parts';
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $secondary;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $secondaryWhite;
+}
